@@ -10,6 +10,8 @@ const app = express()
 
 app.use(cors())
 
+app.use(express.static(path.resolve(__dirname, '../WeatherApp')))
+
 app.get("/api", async (req, res) => {
   await axios.get('http://api.weatherapi.com/v1/current.json', {
     params: {
@@ -19,6 +21,7 @@ app.get("/api", async (req, res) => {
   }).then(({ data }) => res.send(data))
   .catch((error) => {
     if(error.response) {
+      res.send(error.response.data)
       console.log(error.response.data)
     }
   })
