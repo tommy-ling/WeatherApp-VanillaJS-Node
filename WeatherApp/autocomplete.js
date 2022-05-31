@@ -6,7 +6,7 @@ const spanList = [forecastSpan, futureSpan]
 
 export async function autoComplete(searchTerm) {
   const { data } = 
-  await axios.get('http://localhost:3001/api/search', {
+  await axios.get('https://tommy-ling-weatherapp.herokuapp.com/api/search', {
     params: {
       q: searchTerm
     }

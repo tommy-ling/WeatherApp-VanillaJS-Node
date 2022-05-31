@@ -2,7 +2,7 @@ const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Sa
 
 export async function fetchData(searchTerm) {
   const { data } = 
-  await axios.get('http://localhost:3001/api', {
+  await axios.get('https://tommy-ling-weatherapp.herokuapp.com/api', {
     params: {q: searchTerm}
   })
   return data
@@ -33,7 +33,7 @@ export async function fetchCurrentData(locationData) {
 
 export async function fetchForecastData(searchTerm) {
   const { data } = 
-  await axios.get('http://localhost:3001/api/forecast', {
+  await axios.get('https://tommy-ling-weatherapp.herokuapp.com/api/forecast', {
     params: {
       q: searchTerm
     }
